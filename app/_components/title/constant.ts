@@ -29,7 +29,7 @@ export const leaveTitleAnimation: leaveTitleProps = {
     });
   },
   leaveTitleC: ({ onCompleteCallback, onStartCallback }) => {
-    gsap.to('.style-b .word', {
+    gsap.to('.style-c .word', {
       duration: 0.4,
       y: '100%',
       ease: 'power2.in',

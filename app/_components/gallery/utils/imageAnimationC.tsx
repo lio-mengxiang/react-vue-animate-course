@@ -49,7 +49,7 @@ export const imageAnimationC = ({
         return x;
       },
       scale: 0.4,
-      duration: 0.6,
+      duration: 0.4,
       rotation: 20,
     });
   }
