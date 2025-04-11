@@ -90,7 +90,7 @@ const importCommonConfig = {
   files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
   rules: {
     'import-x/no-dynamic-require': 'warn',
-    'import-x/no-nodejs-modules': 'warn',
+    'import-x/no-nodejs-modules': 'off',
   },
 };
 

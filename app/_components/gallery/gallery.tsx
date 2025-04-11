@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { createImages, imageAnimationA, imageAnimationB, imageAnimationC } from './utils';
-import { GALLERY_CLASS_NAME, ITEM_CLASS_NAME } from './constant';
+
+import { imageAnimationA, imageAnimationB, imageAnimationC } from './utils';
+import { GALLERY_CLASS_NAME, IMAGE_NAMES, IMAGE_PATH, ITEM_CLASS_NAME } from './constant';
+import Image from 'next/image';
 
 import { type AnimationHomeGalleryProps } from './interface';
 
@@ -8,14 +10,8 @@ import './index.css';
 
 export function Gallery({ state, animationGalleryARef, animationGalleryBRef, animationGalleryCRef }: AnimationHomeGalleryProps) {
   const container = useRef<HTMLElement>(null);
-  const isInitialized = useRef(false);
 
   useEffect(() => {
-    if (!isInitialized.current) {
-      const gallery = document.querySelector(`.${GALLERY_CLASS_NAME}`) as HTMLElement | null;
-      createImages({ gallery });
-      isInitialized.current = true;
-    }
     if (state === 'A') {
       imageAnimationA({
         container,
@@ -49,7 +45,13 @@ export function Gallery({ state, animationGalleryARef, animationGalleryBRef, ani
 
   return (
     <section className="gallery-container" ref={container}>
-      <div className={GALLERY_CLASS_NAME}></div>
+      <div className={GALLERY_CLASS_NAME}>
+        {IMAGE_NAMES.map((name) => (
+          <div key={name} className={`${ITEM_CLASS_NAME}`}>
+            <Image src={`${IMAGE_PATH}/${name}`} alt={name} fill unoptimized />
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
