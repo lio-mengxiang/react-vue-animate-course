@@ -48,7 +48,7 @@ export function Gallery({ state, animationGalleryARef, animationGalleryBRef, ani
       <div className={GALLERY_CLASS_NAME}>
         {IMAGE_NAMES.map((name) => (
           <div key={name} className={`${ITEM_CLASS_NAME}`}>
-            <Image src={`${IMAGE_PATH}/${name}`} alt={name} fill unoptimized />
+            <Image src={`${IMAGE_PATH}/${name}`} alt={name} fill />
           </div>
         ))}
       </div>
