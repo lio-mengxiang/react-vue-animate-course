@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@gsap/react':
-        specifier: ^2.1.2
+        specifier: 2.1.2
         version: 2.1.2(gsap@3.12.7)(react@19.1.0)
       gsap:
         specifier: ^3.12.7
