@@ -14,7 +14,6 @@ export function getBasePath() {
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
-  distDir: 'docs',
   basePath: getBasePath(),
   images: {
     loader: 'custom',
