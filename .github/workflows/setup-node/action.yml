@@ -12,7 +12,7 @@ runs:
 
     - name: Setup Node.js ⚙️
       uses: actions/setup-node@v4
-         shell: bash
+      shell: bash
       with:
         node-version: 20
         cache: 'pnpm'
