@@ -18,7 +18,7 @@ export const AnimationA = ({ setState, state }: IndicatorProps) => {
         duration: 0.6,
         y: '0%',
         stagger: 0.04,
-        delay: 1,
+        delay: 0.6,
         ease: 'power3.out',
       });
     },
