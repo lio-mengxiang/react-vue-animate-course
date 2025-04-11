@@ -1,0 +1,10 @@
+.indicator-c {
+  margin-top: 4vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.indicator-c .indicator {
+  transform: translate(0%, 100%);
+}

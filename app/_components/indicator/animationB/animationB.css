@@ -1,0 +1,8 @@
+.indicator-b {
+  margin-left: 8.4vh;
+  margin-top: 4vh;
+}
+
+.indicator-b .indicator {
+  transform: translate(0%, 100%);
+}

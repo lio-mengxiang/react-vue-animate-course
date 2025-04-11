@@ -1,0 +1,20 @@
+@import './normalize.css';
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  color: var(--text-color-primary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-bold {
+  font-weight: 700;
+}

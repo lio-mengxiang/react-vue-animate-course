@@ -1,0 +1,12 @@
+.title {
+  width: 100%;
+}
+
+.styleA {
+  font-size: 9vh;
+  height: 22vh;
+  margin-top: 16vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

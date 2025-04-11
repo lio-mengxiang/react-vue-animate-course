@@ -1,0 +1,12 @@
+html,
+body {
+  background-color: rgba(247, 247, 247, 1);
+}
+
+/* html {
+  --vh: 10;
+} */
+.page {
+  height: 100%;
+  overflow: hidden;
+}

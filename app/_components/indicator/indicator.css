@@ -1,0 +1,30 @@
+.indicator {
+  display: flex;
+}
+
+.indicator-item {
+  font-size: 1.6vh;
+  padding: 0.6vh 2vh;
+  background: rgb(252, 252, 252);
+  color: rgba(51, 51, 51);
+  border-radius: 12px;
+  border-style: solid;
+  border-color: rgb(221, 221, 221);
+  border-width: 1px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  display: flex;
+}
+
+.indicator-item:nth-child(1) {
+  margin-right: 2vh;
+}
+
+.indicator-item:nth-child(2) {
+  margin-right: 2vh;
+}
+
+.active {
+  background: rgb(57, 57, 57);
+  color: rgb(228, 228, 228);
+}

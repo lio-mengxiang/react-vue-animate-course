@@ -1,0 +1,17 @@
+.style-b {
+  font-size: 6vh;
+  margin-top: 16vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: 8.4vh;
+}
+
+.style-b .word {
+  transform: translate(0%, -100%);
+}
+
+.style-b .text-b {
+  letter-spacing: 8px;
+  display: flex;
+  overflow: hidden;
+}

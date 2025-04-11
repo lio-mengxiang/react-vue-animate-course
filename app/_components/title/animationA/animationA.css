@@ -1,0 +1,27 @@
+.style-a {
+  font-size: 8vh;
+  margin-top: 16vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.style-a .word {
+  transform: translate(0, -100%);
+}
+
+.style-a .text-a {
+  letter-spacing: 8px;
+  overflow: hidden;
+  display: flex;
+}
+
+.style-a .logo {
+  font-size: 9vh;
+}
+
+.style-a .flex {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+}
