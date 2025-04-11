@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
   distDir: 'docs',
   basePath: '/react-vue-animate-course',
   images: {
-    path: '/react-vue-animate-course',
+    loader: 'custom',
+    loaderFile: './imageLoader.js',
   },
 };
 
