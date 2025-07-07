@@ -2,7 +2,7 @@
 import React, { useRef, type JSX } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { SplitText } from 'gsap-trial/SplitText';
+import { SplitText } from 'gsap/SplitText';
 import { H2 } from '@/_components/typography';
 import { catalogInfo } from './constants';
 import { demoUrlList } from '@/cool-web/demo-list';
