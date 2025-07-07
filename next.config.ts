@@ -15,6 +15,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
   basePath: getBasePath(),
+  assetPrefix: getBasePath(),
   images: {
     loader: 'custom',
     loaderFile: './imageLoader.js',
