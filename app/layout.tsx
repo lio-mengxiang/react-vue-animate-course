@@ -6,6 +6,8 @@ import { Nav } from '@/_components/nav';
 import { Geist } from 'next/font/google';
 
 import './globals.css';
+import './_theme/light.css';
+import './_theme/dark.css';
 import { type ThemeTypeProps } from './_theme';
 import { config } from '../config';
 import { NextLocalStorage } from './localstorage';
@@ -16,7 +18,6 @@ const geistSans = Geist({
 });
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const className = 'light dark';
 export default function RootLayout({
   children,
 }: Readonly<{

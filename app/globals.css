@@ -2,9 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@import './_theme/light.css';
-@import './_theme/dark.css';
-
 
 * {
   box-sizing: border-box;
