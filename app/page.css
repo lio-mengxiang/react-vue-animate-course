@@ -7,6 +7,5 @@ body {
   --vh: 10;
 } */
 .page {
-  height: 100%;
   overflow: hidden;
 }

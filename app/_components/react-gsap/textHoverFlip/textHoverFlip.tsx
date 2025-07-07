@@ -4,7 +4,7 @@ import React, { type CSSProperties, useRef, useEffect, useState, useCallback } f
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-import { cs } from '@/utils';
+import { cs } from '@/_utils';
 
 import type { TextFlipProps } from './interface';
 

@@ -2,7 +2,7 @@ import React, { forwardRef, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-import { cs } from '@/utils';
+import { cs } from '@/_utils';
 
 import './animationB.css';
 

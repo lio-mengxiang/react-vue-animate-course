@@ -1,43 +1,40 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-
-import { darkTheme, lightTheme, setTheme } from './theme';
+import React from 'react';
 import Metadata from './metadata';
-import { ConfigContext } from './context';
+import { Nav } from '@/_components/nav';
+import { Geist } from 'next/font/google';
 
 import './globals.css';
-import type { themeTypeProps } from './theme';
+import { type ThemeTypeProps } from './_theme';
+import { config } from '../config';
+import { NextLocalStorage } from './localstorage';
+
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [themeType, setThemeType] = useState<themeTypeProps>('light');
-
-  useEffect(() => {
-    if (themeType === 'light') {
-      setTheme(lightTheme);
-      return;
-    }
-    if (themeType === 'dark') {
-      setTheme(darkTheme);
-      return;
-    }
-  }, [themeType]);
+  const script = (defaultTheme: ThemeTypeProps, themeKey: string) => {
+    const theme = localStorage.getItem(themeKey) || defaultTheme;
+    localStorage.setItem(themeKey, theme);
+    document.documentElement.setAttribute('class', theme);
+  };
 
   return (
-    <html lang="en">
-      <ConfigContext.Provider
-        value={{
-          themeType,
-          setThemeType,
-        }}
-      >
-        <Metadata />
-        <body>{children}</body>
-      </ConfigContext.Provider>
+    <html lang="zh" suppressHydrationWarning>
+      <Metadata />
+      <body className={`${geistSans.variable} antialiased text-color bg-color font-sans`}>
+        <NextLocalStorage scriptContent={script} defaultTheme={config.defaultTheme}>
+          <Nav />
+          {children}
+        </NextLocalStorage>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,1 @@
+export { ThinBold } from './constants';

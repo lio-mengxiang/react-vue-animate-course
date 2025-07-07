@@ -1,11 +1,14 @@
-import type { Dispatch, SetStateAction } from 'react';
-import type { themeTypeProps } from './theme';
+import type { ThemeTypeProps } from './_theme';
 
-export interface ConfigProviderProps {
-  themeType: themeTypeProps;
-  setThemeType: Dispatch<SetStateAction<themeTypeProps>>;
+export interface LocalstorageProviderProps extends React.PropsWithChildren {
+  themeKey?: string;
+  defaultTheme: ThemeTypeProps;
+  nonce?: string;
+  scriptContent: (defaultTheme: ThemeTypeProps, themeKey: string) => void;
 }
 
-export type StateEnum = 'A' | 'B' | 'C';
-
-export type Func = (...args: any[]) => any;
+export interface LocalstorageContextProps {
+  theme: ThemeTypeProps | undefined;
+  themeKey: string;
+  setThemeState: (theme: ThemeTypeProps) => void;
+}

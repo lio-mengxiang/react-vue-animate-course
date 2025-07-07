@@ -15,7 +15,7 @@
    * @zh 代码单词拼写检查
    * @en Code Spell Checker
    */
-  "cSpell.words": ["codemirror", "esbenp"],
+  "cSpell.words": ["codemirror", "esbenp", "gsap"],
   "cSpell.enabled": true,
   // eslint
   "editor.codeActionsOnSave": {

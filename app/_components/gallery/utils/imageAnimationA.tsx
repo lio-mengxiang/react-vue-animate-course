@@ -52,9 +52,9 @@ export const imageAnimationA = ({
     });
 
     animationGalleryARef.current.to(items, {
-      y: '-10%', // 相当于 translateY(-50%) 到 translateY(-60%) 之间的变化
-      repeat: -1, // 无限循环
+      yPercent: gsap.utils.random(4, 10), // 无限循环
       yoyo: true, // 使动画来回切换
+      repeat: -1, // 无限循环
       duration: 2, // 动画时长，可以根据需要调整
       ease: 'power2.inOut', // 缓动函数，模拟平滑的过渡
     });

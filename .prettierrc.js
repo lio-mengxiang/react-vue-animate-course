@@ -1,4 +1,3 @@
-
 module.exports = {
   /**
    * @zh 行尾需要有分号
@@ -29,6 +28,5 @@ module.exports = {
    * @zh 一行最多 140 字符
    * @en Maximum 140 characters per line
    */
-  printWidth: 140,
+  printWidth: 120,
 };
-

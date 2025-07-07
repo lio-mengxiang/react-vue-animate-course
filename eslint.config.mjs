@@ -40,6 +40,7 @@ const tsLintCustomConfig = {
   // overwrite typescript rules
   rules: {
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
   },
 };
 /**

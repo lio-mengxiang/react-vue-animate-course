@@ -1,0 +1,1 @@
+export { BgScrollImg } from './constants';

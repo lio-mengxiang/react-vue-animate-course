@@ -1,0 +1,1 @@
+export { TextChange } from './constants';

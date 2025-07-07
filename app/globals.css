@@ -1,20 +1,25 @@
-@import './normalize.css';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  color: var(--text-color-primary);
-}
+@import './_theme/light.css';
+@import './_theme/dark.css';
 
 * {
   box-sizing: border-box;
 }
 
-.font-light {
-  font-weight: 300;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
 }
 
-.font-bold {
-  font-weight: 700;
+.font-geist-mono {
+  font-family: var(--font-geist-mono);
+}
+
+.font-geist-sans {
+  font-family: var(--font-geist-sans);
 }

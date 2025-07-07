@@ -2,7 +2,7 @@ import React, { forwardRef, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-import { cs } from '@/utils';
+import { cs } from '@/_utils';
 
 import './animationC.css';
 
@@ -29,6 +29,7 @@ export const AnimationC = forwardRef(() => {
         <div className="word">的</div>
         <div className="word">博</div>
         <div className="word">客</div>
+        <div className="word">更</div>
         <div className="word">亮</div>
         <div className="word">眼</div>
       </span>

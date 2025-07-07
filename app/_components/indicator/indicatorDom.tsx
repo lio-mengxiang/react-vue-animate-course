@@ -1,7 +1,7 @@
 import React from 'react';
 import { INDICATOR_CLASS_NAME, INDICATOR_ITEM_CLASS_NAME, leaveIndicatorAnimation } from './constant';
 import { leaveTitleAnimation } from '../title';
-import { cs } from '@/utils';
+import { cs } from '@/_utils';
 
 import './indicator.css';
 

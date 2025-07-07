@@ -1,6 +1,7 @@
 .indicator-b {
   margin-left: 8.4vh;
   margin-top: 4vh;
+  overflow: hidden;
 }
 
 .indicator-b .indicator {
