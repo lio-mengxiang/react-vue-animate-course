@@ -31,7 +31,8 @@
     "@codemirror/lang-javascript": "^6.2.3",
     "@babel/standalone": "^7.27.0",
     "babel-plugin-transform-remove-imports": "^1.8.0",
-    "@stackblitz/sdk": "1.11.0"
+    "@stackblitz/sdk": "1.11.0",
+    "@tailwindcss/postcss": "4.1.11"
   },
   "devDependencies": {
     "@eslint/js": "9.24.0",

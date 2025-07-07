@@ -15,6 +15,8 @@ const geistSans = Geist({
   subsets: ['latin'],
 });
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const className = 'light dark';
 export default function RootLayout({
   children,
 }: Readonly<{

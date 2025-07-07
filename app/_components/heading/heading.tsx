@@ -36,7 +36,7 @@ export function Heading({ description, title }: { description: ReactNode; title:
   );
 
   return (
-    <H1 subheading={description} className="pb-20 pt-6 z-[-2]" ref={containerRef}>
+    <H1 subheading={description} className="pb-20 pt-6 z-[1]" ref={containerRef}>
       {title}
       <div className="absolute -top-[100px] -left-[100px] [transform:rotateX(50deg)]">
         <Ellipse1
