@@ -88,7 +88,15 @@ export const TextHoverFlip: React.FC<TextFlipProps> = ({
   );
 };
 
-function Words({ words, className, lineIndex }: { words: TextFlipProps['words']; className: string; lineIndex: 1 | 2 }) {
+function Words({
+  words,
+  className,
+  lineIndex,
+}: {
+  words: TextFlipProps['words'];
+  className: string;
+  lineIndex: 1 | 2;
+}) {
   return (
     <div style={baseDivStyle}>
       {words.map((word: string, index: number) => (

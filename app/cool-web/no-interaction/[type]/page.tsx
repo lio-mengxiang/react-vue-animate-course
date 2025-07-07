@@ -7,7 +7,6 @@ import { Heading } from '@/_components/heading';
 
 export default async function CoolWeb({ params }: { params: Promise<{ type: Type }> }) {
   const { type } = await params;
-  console.log('filterList: ', filterList);
 
   return (
     <div className="flex pb-8 mt-16">

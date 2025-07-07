@@ -9,5 +9,6 @@ export function useUpdate(fn: () => void, deps: DependencyList = []) {
     } else {
       isDidMount.current = true;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 }

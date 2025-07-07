@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useCallback, useEffect } from 'react';
+import React, { useRef, useState, useCallback, useEffect, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { H2 } from '@/_components/typography';
@@ -42,7 +42,7 @@ interface TextHoverFlipProps {
 function Button({ word, stagger }: ButtonProps) {
   const [isHover, setIsHover] = useState(false);
   // 分割词语为字符数组，用于 TextHoverFlip 组件的 word
-  const words = React.useMemo(() => splitStringIntoChars(word), [word]);
+  const words = useMemo(() => splitStringIntoChars(word), [word]);
 
   return (
     <div className="cursor-pointer" onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
@@ -87,12 +87,12 @@ function TextHoverFlip({
     return () => {
       window.removeEventListener('resize', resizeHeight);
     };
-  }, []);
+  }, [resizeHeight]);
 
   useEffect(() => {
     resizeHeight();
     setIsCopy(true);
-  }, [words]);
+  }, [resizeHeight, words]);
 
   useGSAP(
     () => {

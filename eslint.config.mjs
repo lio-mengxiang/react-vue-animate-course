@@ -66,6 +66,7 @@ const reactConfig = [
       ...nextPlugin.configs.recommended.rules,
       ...nextPlugin.configs['core-web-vitals'].rules,
       'react/display-name': 'off',
+      '@next/next/no-img-element': 'off',
     },
   },
   {

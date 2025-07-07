@@ -12,3 +12,6 @@ export interface LocalstorageContextProps {
   themeKey: string;
   setThemeState: (theme: ThemeTypeProps) => void;
 }
+
+export type StateEnum = any;
+export type Func = (...args: any[]) => any;

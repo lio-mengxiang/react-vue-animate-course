@@ -1,4 +1,4 @@
-import React, { type ComponentType, Component } from 'react';
+import React, { type ComponentType, Component, isValidElement } from 'react';
 
 const errorBoundary = (Element: ComponentType, errorCallback: (error: Error) => void) => {
   return class ErrorBoundary extends Component {
@@ -7,7 +7,7 @@ const errorBoundary = (Element: ComponentType, errorCallback: (error: Error) => 
     }
 
     render() {
-      return typeof Element === 'function' ? <Element /> : React.isValidElement(Element) ? Element : null;
+      return typeof Element === 'function' ? <Element /> : isValidElement(Element) ? Element : null;
     }
   };
 };

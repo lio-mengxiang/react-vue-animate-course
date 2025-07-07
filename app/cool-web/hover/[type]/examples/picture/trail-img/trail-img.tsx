@@ -160,7 +160,7 @@ const TrailItem = ({ item, onComplete }: TrailItemProps) => {
     animate(sequence as AnimationSequence).then(() => {
       onComplete(item.id);
     });
-  }, []);
+  }, [animate, item.animationSequence, item.id, onComplete, scope]);
 
   return (
     <motion.div

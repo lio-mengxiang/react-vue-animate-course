@@ -8,7 +8,12 @@ import { type AnimationHomeGalleryProps } from './interface';
 
 import './index.css';
 
-export function Gallery({ state, animationGalleryARef, animationGalleryBRef, animationGalleryCRef }: AnimationHomeGalleryProps) {
+export function Gallery({
+  state,
+  animationGalleryARef,
+  animationGalleryBRef,
+  animationGalleryCRef,
+}: AnimationHomeGalleryProps) {
   const container = useRef<HTMLElement>(null);
 
   useEffect(() => {

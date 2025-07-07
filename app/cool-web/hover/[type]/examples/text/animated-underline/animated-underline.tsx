@@ -23,7 +23,7 @@ export function AnimateCardExample() {
         vueUrl={demoUrlList.hover.AnimateCardExample.vue}
         reactUrl={demoUrlList.hover.AnimateCardExample.react}
       >
-        {/* {catalogInfo.text} */}
+        underline
       </H2>
       <div className="px-8 py-16 flex justify-center bg-color-50">
         <App />

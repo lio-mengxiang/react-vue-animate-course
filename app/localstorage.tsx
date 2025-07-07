@@ -22,7 +22,13 @@ const saveToLS = (storageKey: string, value: string) => {
 
 export const useLocalStorageContext = () => useContext(LocalstorageContext);
 
-export const NextLocalStorage = ({ defaultTheme, children, nonce, scriptContent, themeKey = THEME }: LocalstorageProviderProps) => {
+export const NextLocalStorage = ({
+  defaultTheme,
+  children,
+  nonce,
+  scriptContent,
+  themeKey = THEME,
+}: LocalstorageProviderProps) => {
   const [theme, setTheme] = useState<ThemeTypeProps | undefined>(undefined);
 
   const setThemeState = useCallback(
@@ -76,16 +82,18 @@ export const NextLocalStorage = ({ defaultTheme, children, nonce, scriptContent,
   );
 };
 
-const ThemeScript = memo(({ nonce, scriptContent, defaultTheme, themeKey }: Omit<LocalstorageProviderProps, 'children'>) => {
-  return (
-    <script
-      suppressHydrationWarning
-      nonce={typeof window === 'undefined' ? nonce : ''}
-      dangerouslySetInnerHTML={{
-        __html: `
+const ThemeScript = memo(
+  ({ nonce, scriptContent, defaultTheme, themeKey }: Omit<LocalstorageProviderProps, 'children'>) => {
+    return (
+      <script
+        suppressHydrationWarning
+        nonce={typeof window === 'undefined' ? nonce : ''}
+        dangerouslySetInnerHTML={{
+          __html: `
    (${scriptContent.toString()})('${defaultTheme}', '${themeKey}');
   `,
-      }}
-    />
-  );
-});
+        }}
+      />
+    );
+  },
+);

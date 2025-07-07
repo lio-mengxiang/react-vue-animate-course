@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef } from 'react';
+import React, { memo, useCallback, useMemo, useRef } from 'react';
 import { motion, useAnimationControls } from 'motion/react';
 import { useDimensions } from './use-debounced-dimensions';
 import { cs } from '@/_utils';
@@ -84,7 +84,7 @@ interface PixelDotProps {
   className?: string;
 }
 
-const PixelDot: React.FC<PixelDotProps> = React.memo(({ id, size, fadeDuration, delay, className }: any) => {
+const PixelDot: React.FC<PixelDotProps> = memo(({ id, size, fadeDuration, delay, className }: any) => {
   const controls = useAnimationControls();
 
   const animatePixel = useCallback(() => {
@@ -92,7 +92,7 @@ const PixelDot: React.FC<PixelDotProps> = React.memo(({ id, size, fadeDuration, 
       opacity: [1, 0],
       transition: { duration: fadeDuration / 1000, delay: delay / 1000 },
     });
-  }, []);
+  }, [controls, delay, fadeDuration]);
 
   // Attach the animatePixel function to the DOM element
   const ref = useCallback(

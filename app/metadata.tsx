@@ -5,7 +5,10 @@ export default function Metadata() {
     <>
       <title>前端动画社区</title>
       <meta name="author" content="孟祥同学" />
-      <meta name="description" content="前端动效成长社区，分享前端动效相关的知识和经验，包括 gsap、motion、three.js 等。" />
+      <meta
+        name="description"
+        content="前端动效成长社区，分享前端动效相关的知识和经验，包括 gsap、motion、three.js 等。"
+      />
       <meta
         name="keywords"
         content="'前端动效',

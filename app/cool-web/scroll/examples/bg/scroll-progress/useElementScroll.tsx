@@ -1,13 +1,13 @@
 import { useState, useCallback, useEffect } from 'react';
 
-export function useElementScroll(elementRef) {
+export function useElementScroll(elementRef: any) {
   const [state, setState] = useState({
     x: 0,
     y: 0,
   });
 
   const scrollTo = useCallback(
-    (...args) => {
+    (...args: any[]) => {
       if (!elementRef?.current) return;
 
       const el = elementRef.current;

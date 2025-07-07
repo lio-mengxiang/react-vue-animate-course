@@ -5,7 +5,6 @@ import { useCodePreview } from './hooks';
 import * as gsapReact from '@gsap/react';
 import * as Motion from 'motion/react';
 import * as T from '@t-headless-ui/react';
-import SplitText from 'gsap-trial/SplitText';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
 import { cs } from '@/_utils';
@@ -22,7 +21,6 @@ const Depend = {
   ...Motion,
   ...React,
   cs,
-  SplitText,
   ScrollTrigger,
   ...Utils,
   useScreenSize,

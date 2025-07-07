@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { H2 } from '@/_components/typography';
 import { cs } from '@/_utils';
 import { motion } from 'motion/react';
@@ -99,14 +99,17 @@ const ScrambleHover = ({
 
   const revealOrder = useMemo(() => getRevealOrder(text.length, revealDirection), [text, revealDirection]);
 
-  const getNextIndex = (revealed: Set<number>): number => {
-    for (let i = 0; i < revealOrder.length; i++) {
-      const index = revealOrder[i];
-      // 找出之前 revealOrder 中没有的 index
-      if (!revealed.has(index)) return index;
-    }
-    return 0;
-  };
+  const getNextIndex = useCallback(
+    (revealed: Set<number>): number => {
+      for (let i = 0; i < revealOrder.length; i++) {
+        const index = revealOrder[i];
+        // 找出之前 revealOrder 中没有的 index
+        if (!revealed.has(index)) return index;
+      }
+      return 0;
+    },
+    [revealOrder],
+  );
 
   function getRandomIntInclusive(min: number, max: number): number {
     const minCeiled = Math.ceil(min);
@@ -114,27 +117,30 @@ const ScrambleHover = ({
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
   }
 
-  const shuffleText = (revealed: Set<number>): string => {
-    const textArray = text.split('');
-    return textArray
-      .map((char, i) => {
-        // 之前已经 revealed 的字符，不参与随机
-        if (char === ' ' || revealed.has(i)) return char;
+  const shuffleText = useCallback(
+    (revealed: Set<number>): string => {
+      const textArray = text.split('');
+      return textArray
+        .map((char, i) => {
+          // 之前已经 revealed 的字符，不参与随机
+          if (char === ' ' || revealed.has(i)) return char;
 
-        // 其它字母参与随机
-        if (useOriginalCharsOnly) {
-          const unrevealed = textArray
-            .map((c, j) => (!revealed.has(j) && c !== ' ' ? c : null))
-            .filter(Boolean) as string[];
+          // 其它字母参与随机
+          if (useOriginalCharsOnly) {
+            const unrevealed = textArray
+              .map((c, j) => (!revealed.has(j) && c !== ' ' ? c : null))
+              .filter(Boolean) as string[];
 
-          return unrevealed[getRandomIntInclusive(0, unrevealed.length - 1)] || char;
-        } else {
-          // 随机从 character 中取一个字母
-          return availableChars[getRandomIntInclusive(0, availableChars.length - 1)];
-        }
-      })
-      .join('');
-  };
+            return unrevealed[getRandomIntInclusive(0, unrevealed.length - 1)] || char;
+          } else {
+            // 随机从 character 中取一个字母
+            return availableChars[getRandomIntInclusive(0, availableChars.length - 1)];
+          }
+        })
+        .join('');
+    },
+    [availableChars, text, useOriginalCharsOnly],
+  );
 
   useEffect(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
@@ -182,7 +188,7 @@ const ScrambleHover = ({
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [isHovering, scrambleSpeed, sequential, revealDirection, text, maxIterations, availableChars.join()]);
+  }, [isHovering, scrambleSpeed, sequential, revealDirection, text, maxIterations, getNextIndex, shuffleText]);
 
   return (
     <motion.span

@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useState } from 'react';
+import { useCallback, useLayoutEffect, useState } from 'react';
 
 export function useWindowScroll() {
   const [state, setState] = useState<{ x: number | null; y: number | null }>({
