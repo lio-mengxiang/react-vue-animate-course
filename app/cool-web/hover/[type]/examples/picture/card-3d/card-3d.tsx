@@ -6,8 +6,6 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { catalogInfo } from './constants';
 import { demoUrlList } from '@/cool-web/demo-list';
-import { cs } from '@/_utils';
-import { url } from 'inspector';
 
 /**
  * 计算鼠标跟卡片中心的距离（center.x，center.y），使用老一套 getBoundingClientRect() 方法，中心的话别忘记减去容器 width / 2
