@@ -6,6 +6,7 @@ import { SplitText } from 'gsap/SplitText';
 import { H2 } from '@/_components/typography';
 import { catalogInfo } from './constants';
 import { demoUrlList } from '@/cool-web/demo-list';
+import { getImageUrl } from '@/_utils';
 
 gsap.registerPlugin(SplitText);
 
@@ -120,7 +121,7 @@ function App() {
       <div className="profile-images w-max flex justify-center items-center">
         {['motion', 'three', 'react', 'vue'].map((_, i) => (
           <div key={i} className="img w-16 h-16 object-cover p-2 cursor-pointer will-change-auto">
-            <img className="rounded-lg" src={`/animation-home/${_}.webp`} alt="" />
+            <img className="rounded-lg" src={getImageUrl(`/animation-home/${_}.webp`)} alt="" />
           </div>
         ))}
       </div>

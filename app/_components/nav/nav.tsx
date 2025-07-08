@@ -74,8 +74,6 @@ export function Nav() {
         <Logo
           className="text-2xl cursor-pointer"
           onClick={() => {
-            console.log('getBasePath(): ', getHomePath());
-
             router.push(getHomePath());
           }}
         />

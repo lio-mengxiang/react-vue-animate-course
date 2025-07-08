@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import { H2 } from '@/_components/typography';
 import { catalogInfo } from './constants';
 import { demoUrlList } from '@/cool-web/demo-list';
+import { getImageUrl } from '@/_utils';
 
 /**
  * 圆形套路
@@ -34,11 +35,41 @@ function App() {
       <div className="z-10">
         <span className="image-round">hover我有惊喜哦！</span>
       </div>
-      <img width={50} height={50} className="item absolute opacity-0" src="/animation-home/blender.webp" alt="" />
-      <img width={50} height={50} className="item absolute opacity-0" src="/animation-home/gsap.webp" alt="" />
-      <img width={50} height={50} className="item absolute opacity-0" src="/animation-home/motion.webp" alt="" />
-      <img width={50} height={50} className="item absolute opacity-0" src="/animation-home/react.webp" alt="" />
-      <img width={50} height={50} className="item absolute opacity-0" src="/animation-home/vue.webp" alt="" />
+      <img
+        width={50}
+        height={50}
+        className="item absolute opacity-0"
+        src={getImageUrl('/animation-home/blender.webp')}
+        alt=""
+      />
+      <img
+        width={50}
+        height={50}
+        className="item absolute opacity-0"
+        src={getImageUrl('/animation-home/gsap.webp')}
+        alt=""
+      />
+      <img
+        width={50}
+        height={50}
+        className="item absolute opacity-0"
+        src={getImageUrl('/animation-home/motion.webp')}
+        alt=""
+      />
+      <img
+        width={50}
+        height={50}
+        className="item absolute opacity-0"
+        src={getImageUrl('/animation-home/react.webp')}
+        alt=""
+      />
+      <img
+        width={50}
+        height={50}
+        className="item absolute opacity-0"
+        src={getImageUrl('/animation-home/vue.webp')}
+        alt=""
+      />
     </div>
   );
 }

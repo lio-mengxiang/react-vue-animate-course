@@ -23,6 +23,7 @@ function App() {
         grid.appendChild(cell);
         cells.push(cell);
       }
+      console.log(21212);
 
       // 鼠标移动事件
       const handleMouseMove = contextSafe((e: any) => {
@@ -77,6 +78,7 @@ function App() {
       return () => {
         grid.removeEventListener('mousemove', handleMouseMove);
         grid.removeEventListener('mouseleave', handleMouseLeave);
+        grid.innerHTML = '';
       };
     },
     { scope: containerRef, dependencies: [] },

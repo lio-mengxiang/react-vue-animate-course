@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect, JSX, ReactNode } from 'react';
 import { H2 } from '@/_components/typography';
 import { catalogInfo } from './constants';
 import { demoUrlList } from '@/cool-web/demo-list';
+import { getImageUrl } from '@/_utils';
 
 interface CursorProps {
   children: ReactNode;
@@ -137,7 +138,7 @@ export default function App(): JSX.Element {
           className="overflow-hidden"
           innerClassName="opacity-0"
         >
-          <img src="/bg-mountion.webp" alt="Christian Church, Eastern Europe" className="h-40 w-40" />
+          <img src={getImageUrl('/bg-mountion.webp')} alt="Christian Church, Eastern Europe" className="h-40 w-40" />
         </Cursor>
         <span className="font-bold text-5xl mix-blend-difference text-white">WebSite</span>
       </div>
@@ -158,7 +159,7 @@ export default function App(): JSX.Element {
         >
           <div className="ml-4 mt-1 rounded-[4px] bg-cyan-500 px-2 py-0.5 text-neutral-50">Welcome</div>
         </Cursor>
-        <img src="/bg-mountion.webp" alt="Green herbs" className="h-40 w-full max-w-32 object-cover" />
+        <img src={getImageUrl('/bg-mountion.webp')} alt="Green herbs" className="h-40 w-full max-w-32 object-cover" />
       </div>
     </div>
   );

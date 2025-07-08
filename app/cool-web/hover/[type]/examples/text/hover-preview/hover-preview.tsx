@@ -5,6 +5,7 @@ import { H2 } from '@/_components/typography';
 import { AnimatePresence, motion, useMotionValue, useSpring } from 'motion/react';
 import { catalogInfo } from './constants';
 import { demoUrlList } from '@/cool-web/demo-list';
+import { getImageUrl } from '@/_utils';
 
 /**
  * 典型的坐标映射，如果想加上效果使用useMotionValue => useSpring
@@ -103,7 +104,12 @@ const HoverLinkPreview = ({ href, previewImage, imageAlt = 'Link preview', child
             }}
           >
             <div className="bg-white border rounded-2xl shadow-lg p-2 w-24 h-24">
-              <img src={previewImage} alt={imageAlt} draggable={false} className="w-20 h-20 object-cover rounded-lg" />
+              <img
+                src={getImageUrl(previewImage)}
+                alt={imageAlt}
+                draggable={false}
+                className="w-20 h-20 object-cover rounded-lg"
+              />
             </div>
           </motion.div>
         )}

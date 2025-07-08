@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import { H2 } from '@/_components/typography';
 import { catalogInfo } from './constants';
 import { demoUrlList } from '@/cool-web/demo-list';
+import { getStyleImageUrl } from '@/_utils';
 
 type ProjectId = 'p1' | 'p2' | 'p3' | 'p4';
 
@@ -99,7 +100,12 @@ export default function App(): JSX.Element {
   return (
     <div ref={containerRef} className="relative w-full">
       <div className="preview absolute w-64 h-64 overflow-hidden pointer-events-none origin-center">
-        <div className="preview-img opacity-0 bg-[url(/sprite_bg.webp)] w-full h-full bg-cover bg-[left_0_top_0] pointer-events-none"></div>
+        <div
+          className="preview-img opacity-0  w-full h-full bg-cover bg-[left_0_top_0] pointer-events-none"
+          style={{
+            backgroundImage: getStyleImageUrl('/sprite_bg.webp'),
+          }}
+        ></div>
       </div>
       <div className="projects flex flex-col">
         <div className="project" id="p1">
