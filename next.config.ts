@@ -15,7 +15,9 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
   basePath: getBasePath(),
-  assetPrefix: getBasePath(),
+  env: {
+    isGithubPage: getBasePath(),
+  },
   images: {
     loader: 'custom',
     loaderFile: './imageLoader.js',

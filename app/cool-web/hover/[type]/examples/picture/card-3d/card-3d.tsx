@@ -6,6 +6,8 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { catalogInfo } from './constants';
 import { demoUrlList } from '@/cool-web/demo-list';
+import { cs } from '@/_utils';
+import { url } from 'inspector';
 
 /**
  * 计算鼠标跟卡片中心的距离（center.x，center.y），使用老一套 getBoundingClientRect() 方法，中心的话别忘记减去容器 width / 2
@@ -32,6 +34,7 @@ import { demoUrlList } from '@/cool-web/demo-list';
 
 function App() {
   const container = useRef(null);
+
   useGSAP(
     () => {
       const $card = document.querySelector('.credit-card');
@@ -132,9 +135,10 @@ function App() {
     },
     { scope: container, dependencies: [] },
   );
+  // className={`credit-card relative p-6 w-60 h-60 rounded-xl overflow-hidden bg-cover bg-[url(${process.env.isGithubPage ? '/react-vue-animate-course' : ''}/animation-home/react.webp)]`}
   return (
     <div
-      className="credit-card relative p-6 w-60 h-60 rounded-xl overflow-hidden bg-cover bg-[url('/animation-home/react.webp')]"
+      className={`credit-card relative p-6 w-60 h-60 rounded-xl overflow-hidden bg-cover ${process.env.isGithubPage ? `bg-[url(${process.env.isGithubPage}/animation-home/react.webp)` : 'bg-[url(/animation-home/react.webp)]'} `}
       ref={container}
     >
       <div className="glare absolute w-full h-full left-0 top-0"></div>

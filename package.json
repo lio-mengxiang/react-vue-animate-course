@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "APP_ENV=github-page2 next dev",
     "build:github-page": "APP_ENV=github-page next build",
     "build": "next build",
     "start": "next start",
