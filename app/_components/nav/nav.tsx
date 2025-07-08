@@ -6,7 +6,7 @@ import { GithubLink } from './components/github-link';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { useRouter } from 'next/navigation';
-import { getBasePath } from '../../../next.config';
+import { getHomePath } from '../../../next.config';
 
 const menuLinks = [
   {
@@ -72,9 +72,11 @@ export function Nav() {
     >
       <div className="text-sm flex items-end gap-x-1">
         <Logo
-          className="text-2xl"
+          className="text-2xl cursor-pointer"
           onClick={() => {
-            router.push(getBasePath());
+            console.log('getBasePath(): ', getHomePath());
+
+            router.push(getHomePath());
           }}
         />
       </div>

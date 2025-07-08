@@ -11,6 +11,13 @@ export function getBasePath() {
   return '';
 }
 
+export function getHomePath() {
+  if (isGithubPage) {
+    return githubPageBasePath;
+  }
+  return '/';
+}
+
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
