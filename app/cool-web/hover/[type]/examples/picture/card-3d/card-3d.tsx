@@ -139,7 +139,7 @@ function App() {
       className="credit-card relative p-6 w-60 h-60 rounded-xl overflow-hidden bg-cover"
       ref={container}
       style={{
-        background: `${process.env.isGithubPage ? `bg-[url(${process.env.isGithubPage}/animation-home/react.webp)` : 'bg-[url(/animation-home/react.webp)]'}`,
+        backgroundImage: `${process.env.isGithubPage ? `url(${process.env.isGithubPage}/animation-home/react.webp)` : 'url(/animation-home/react.webp)'}`,
       }}
     >
       <div className="glare absolute w-full h-full left-0 top-0"></div>
