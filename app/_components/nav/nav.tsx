@@ -6,6 +6,7 @@ import { GithubLink } from './components/github-link';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { useRouter } from 'next/navigation';
+import { getBasePath } from '../../../next.config';
 
 const menuLinks = [
   {
@@ -70,7 +71,12 @@ export function Nav() {
       ref={container}
     >
       <div className="text-sm flex items-end gap-x-1">
-        <Logo className="text-2xl" />
+        <Logo
+          className="text-2xl"
+          onClick={() => {
+            router.push(getBasePath());
+          }}
+        />
       </div>
       <div className="flex gap-x-4 items-center">
         <div className="hover:bg-slate-50 px-4 py-2 rounded-md" onClick={toggleMenu}>

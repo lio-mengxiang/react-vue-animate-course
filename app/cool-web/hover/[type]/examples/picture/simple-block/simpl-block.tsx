@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { catalogInfo } from './constants';
 import { demoUrlList } from '@/cool-web/demo-list';
+import { getImageUrl } from '@/_utils';
 
 /**
  * 图片填满 opacity-0 的方块
@@ -54,7 +55,12 @@ function App() {
 
   return (
     <div ref={container} className="w-60 h-60 relative">
-      <img className="w-full h-full absolute object-cover" ref={imgRef} src="/animation-home/blender.webp" alt="" />
+      <img
+        className="w-full h-full absolute object-cover"
+        ref={imgRef}
+        src={getImageUrl('/animation-home/blender.webp')}
+        alt=""
+      />
       <div
         className="absolute w-full h-full"
         style={{

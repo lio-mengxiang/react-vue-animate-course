@@ -4,6 +4,7 @@ import { H2 } from '@/_components/typography';
 import { AnimationSequence, motion, Target, Transition, useAnimate, useAnimationFrame } from 'motion/react';
 import { catalogInfo } from './constants';
 import { demoUrlList } from '@/cool-web/demo-list';
+import { getImageUrl } from '@/_utils';
 
 /**
  * hover 类的一定是要有记录在容器相对位置的数据结构
@@ -31,7 +32,11 @@ function App() {
         <ImageTrail containerRef={ref}>
           {images.map((url, index) => (
             <div key={index} className="flex relative overflow-hidden w-24 h-24 rounded-lg">
-              <img src={url} alt="Trail image" className="object-cover absolute inset-0 transition-transform" />
+              <img
+                src={getImageUrl(url)}
+                alt="Trail image"
+                className="object-cover absolute inset-0 transition-transform"
+              />
             </div>
           ))}
         </ImageTrail>

@@ -6,6 +6,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { catalogInfo } from './constants';
 import { demoUrlList } from '@/cool-web/demo-list';
+import { getStyleImageUrl } from '@/_utils';
 
 /**
  * 计算鼠标跟卡片中心的距离（center.x，center.y），使用老一套 getBoundingClientRect() 方法，中心的话别忘记减去容器 width / 2
@@ -139,7 +140,7 @@ function App() {
       className="credit-card relative p-6 w-60 h-60 rounded-xl overflow-hidden bg-cover"
       ref={container}
       style={{
-        backgroundImage: `${process.env.isGithubPage ? `url(${process.env.isGithubPage}/animation-home/react.webp)` : 'url(/animation-home/react.webp)'}`,
+        backgroundImage: getStyleImageUrl('/animation-home/react.webp'),
       }}
     >
       <div className="glare absolute w-full h-full left-0 top-0"></div>

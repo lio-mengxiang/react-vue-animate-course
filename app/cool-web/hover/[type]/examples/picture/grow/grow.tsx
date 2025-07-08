@@ -3,6 +3,7 @@ import { H2 } from '@/_components/typography';
 import React from 'react';
 import { catalogInfo } from './constants';
 import { demoUrlList } from '@/cool-web/demo-list';
+import { getStyleImageUrl } from '@/_utils';
 
 /**
  * 每个子元素 flex-grow 是 1.同时 flex-basic 是 0，这样每个元素的宽度都是一样的。
@@ -69,7 +70,7 @@ function App() {
           key={index}
           className="grow cursor-pointer h-[200px] sm:h-[400px] basis-0 transition-all duration-300 ease-in-out hover:grow-[2] border border-solid border-white"
           style={{
-            backgroundImage: `url(${data[index].bg})`,
+            backgroundImage: getStyleImageUrl(data[index].bg),
             backgroundSize: 'cover',
             backgroundPosition: '100% 0',
           }}

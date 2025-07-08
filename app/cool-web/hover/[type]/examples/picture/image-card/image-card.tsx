@@ -4,6 +4,7 @@ import './index.css';
 import { H2 } from '@/_components/typography';
 import { catalogInfo } from './constants';
 import { demoUrlList } from '@/cool-web/demo-list';
+import { getImageUrl } from '@/_utils';
 
 /**
  * 背景的移动，本质就是 absolute 定位，然后移动到不同 dom 元素时，计算出宽高和 left、top (背景颜色块和背景都是相对于容器定位的，所以使用 getBoundingClientRect 那一套计算背景在容器的相对距离即可)
@@ -13,7 +14,7 @@ function App() {
     <div className="flex justify-center items-end gap-12 py-12">
       {[
         {
-          cover: '/image-card/dark_rider-cover.webp',
+          cover: getImageUrl('/image-card/dark_rider-cover.webp'),
           title: '/image-card/dark_rider-title.webp',
           character: '/image-card/dark_rider-character.webp',
         },
