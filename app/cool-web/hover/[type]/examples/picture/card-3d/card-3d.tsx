@@ -133,11 +133,14 @@ function App() {
     },
     { scope: container, dependencies: [] },
   );
-  // className={`credit-card relative p-6 w-60 h-60 rounded-xl overflow-hidden bg-cover bg-[url(${process.env.isGithubPage ? '/react-vue-animate-course' : ''}/animation-home/react.webp)]`}
+
   return (
     <div
-      className={`credit-card relative p-6 w-60 h-60 rounded-xl overflow-hidden bg-cover ${process.env.isGithubPage ? `bg-[url(${process.env.isGithubPage}/animation-home/react.webp)` : 'bg-[url(/animation-home/react.webp)]'} `}
+      className="credit-card relative p-6 w-60 h-60 rounded-xl overflow-hidden bg-cover"
       ref={container}
+      style={{
+        background: `${process.env.isGithubPage ? `bg-[url(${process.env.isGithubPage}/animation-home/react.webp)` : 'bg-[url(/animation-home/react.webp)]'}`,
+      }}
     >
       <div className="glare absolute w-full h-full left-0 top-0"></div>
     </div>
